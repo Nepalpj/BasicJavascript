@@ -4,14 +4,15 @@ push
 
 git init
 git remote add origin https..
-git add.
+git add .
 git commit -m "add initial commit"
 git push origin master
 
 
+
 BRANCHING
 
-git branch <BranchName>
+git branch <BranchName>    //  git branch prasanna
 git checkout <BranchName>
 git add
 git commit -m "add initial commit"
@@ -23,3 +24,7 @@ git checkout master
 git merge <changes branch name>
 git push -u origin master
 
+image.png
+
+
+let const var 
