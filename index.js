@@ -85,7 +85,7 @@
 
 // string method
 
-let result = "hello world";
+// let result = "hello world";
 // console.log(result.length)
 // console.log(result[0]);
 
@@ -342,7 +342,7 @@ let result = "hello world";
 // console.log(arr.) 
 
 
-const arr = [1,5,6,4,8,9,7,8]
+// const arr = [1,5,6,4,8,9,7,8]
 // console.log(arr.length)
 
 // arr.push(6);
@@ -362,9 +362,208 @@ const arr = [1,5,6,4,8,9,7,8]
 
 //object
 
-const Obj = {
-   name : "prasanna",
-   age : 21 ,
-   country : "nepal",
-};
-console.log(Obj);
+// const Obj = {
+//    name : "prasanna",
+//    age : 21 ,
+//    country : "nepal",
+// };
+// console.log(Obj);
+
+// const arr = new Array(1,2,3);
+// console.log(arr);
+
+// const arr = [];
+// for (let i=0; i<=10; i++){
+//    arr.push(i);
+// }
+// console.log(arr);
+
+//object
+// const obj = {
+   // car: "Toyota",
+   // model:"camry",
+   // color:"red",
+   // wheel:"4",
+   // iseletrc:"false",
+
+   // StartEngine:function(){
+   //    console.log("Start");
+   //    return true;
+   // },
+
+   // CloseEngine:function(){
+   //    console.log("close");
+   //    return false;
+   // },
+// };
+// console.log(obj);
+
+// if(obj.StartEngine()){
+//    console.log("your car is ready to start!");
+// }else if (obj.CloseEngine()){
+//    console.log("your car is notready to start!");
+// }else {
+//    console.log("Invalid")
+// }
+
+
+
+// const my = {
+//    name:"Prasanna joshi",
+//    age:"22",
+//    ismarried:"false",
+// };
+// console.log(my);
+
+// function myfunc() {
+//    let x =5;
+//    let y =10;
+//    let ans = x+y;
+//    console.log(ans)
+// }
+// myfunc();
+
+
+// function myfunct(a,b,c=36) {
+//    console.log(c)
+//    return a + b +c;
+// }
+
+// const result = myfunct(5, 6);
+// console.log(result);
+
+// function SumArr(arr=[]){
+//  let total = 0;
+//  for (let i =0; i<arr.length; i++){
+//    //total = total+arr[i]
+//    // console.log(arr[i])
+//    total +=arr[i];
+//  }
+//  return total;
+// }
+// const ans = SumArr([4,5,6,8,5,2,4,6]);
+// console.log(ans);
+
+//scoping
+
+// let x = 90;
+// {
+//    let y = 9+5;
+//    console.log(x)
+// }
+
+// console.log(y);
+
+
+//varscope
+
+// var x = 90;
+// function myvar() {
+//    if(true){
+//       var x = 5+6;
+//    }
+//    console.log(x);
+// }
+
+// console.log(x);
+// myvar();
+
+//let
+
+// let x = 90;
+// function mylet() {
+//    if(true){
+//       let x = 5/6;
+//       console.log(x);
+//    }
+// }
+
+// console.log(x);
+// mylet();
+
+//const
+
+// const x = 90;
+// function myconst() {
+//    if(true){
+//       const x = 5-6;
+//       console.log(x);
+//    }
+// }
+
+// console.log(x);
+// myconst();
+
+
+// console.log(window)
+// console.log(window.document);
+
+// //Dom
+// const header = document.getElementById("color");
+// console.log(header);
+// header.innerHTML ="changed!"
+// header.style.background = "green";
+// header.style.color= "white";
+
+// const change = document.getElementsByClassName("para");
+// console.log(change[0]);
+//  change[0].innerHTML="k cha";
+// console.log(change);     // arry rakhnu parxa yedi elements xa vaye
+
+// change[0].style.color = "red";
+// change[0].style.background = "white";
+
+
+//dom manipulation
+
+const text = document.getElementById("first");
+const text1 = document.getElementsByClassName("second");
+const mayor = document.getElementsByTagName("span");
+const Btn = document.querySelectorAll("button");
+const clickBtn =document.querySelector("#click");
+
+
+//  console.log(clickBtn.getAttribute("id"));
+//  clickBtn.setAttribute("class", "classchanged");
+
+function ShowWhenClick() {  
+   const h1 = document.createElement("h1");
+   h1.innerHTML = "policy";
+   document.body.prepend(h1);
+   // document.body.append(h1);
+}
+
+function deletewhenclick(){
+      const h1 = document.querySelector("h1");
+      h1.remove();
+}
+console.log(mayor)
+text.innerHTML = "<h1>Have fun </h1>";
+text.style.backgroundColor="lightgreen"
+text.style.color="blue";
+text.style.alignContent="center"
+console.log(text);
+
+// console.log(text1);
+text1[0].style.backgroundColor="red";
+text1[0].style.color="white";
+
+mayor[0].innerHTML = "Balen";
+mayor[1].innerHTML = "Harka";
+
+Btn[1].style.color = "white";
+Btn[1].style.borderRadius = "5px"
+Btn[1].style.backgroundColor="red"
+Btn[1].style.boder = "none";
+Btn[1].style.margin = "10px"
+Btn[1].style.padding = "5px";
+Btn[1].onclick = deletewhenclick;
+
+
+clickBtn.style.color = "black";
+clickBtn.style.borderRadius = "5px"
+clickBtn.style.backgroundColor="green"
+clickBtn.style.boder = "none";
+clickBtn.style.margin = "10px"
+clickBtn.style.padding = "5px"
+clickBtn.onclick= ShowWhenClick;
