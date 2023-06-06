@@ -1,4 +1,21 @@
-.color{
+/* .color{
     color: blue;
     background: greenyellow;
+} */
+
+
+.classdiv{
+    width: 100px;
+    height: 50px;
+    border: none;
+    background-color: blueviolet;
+    color: whitesmoke;
+    cursor: pointer;
+    margin: 10px;
+}
+.classbox{
+    background-color: red;
+    padding: 30px;
+    color: beige;
+    margin: 5px;
 }
