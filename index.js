@@ -764,17 +764,143 @@ const Bntlogout = document.querySelector("#clear");
 // }
 
 
-const AddWebStorage = ()=>{
-   localStorage.setItem("key",JSON.stringify({   // JSON.stringify to covert object to string
-      name:"prasanna",
-      roll:1,
-      class:"BCA",
-   }));
-};
-addBnt.addEventListener("click",AddWebStorage);
-Bntlogout.addEventListener("click", ()=>{
-localStorage.clear();
-})
-if(localStorage.getItem("key")){
-console.log(JSON.parse(localStorage.getItem("key")));
-}
+// const AddWebStorage = ()=>{
+//    localStorage.setItem("key",JSON.stringify({   // JSON.stringify to covert object to string
+//       name:"prasanna",
+//       roll:1,
+//       class:"BCA",
+//    }));
+// };
+// addBnt.addEventListener("click",AddWebStorage);
+// Bntlogout.addEventListener("click", ()=>{
+// localStorage.clear();
+// })
+// if(localStorage.getItem("key")){
+// console.log(JSON.parse(localStorage.getItem("key")));
+// }
+
+//oop(object oriented program)
+// function Person(name,age) {
+//    this.name=name;
+//    this.age=age;
+   
+//    this.greet = function () {
+//       console.log(`hello class my name is: ${this.name}.and my age is: ${this.age}`);
+
+      
+//    };
+// }
+
+// const person1 =new Person("ram",22); 
+// const person2 =new Person("hari",24);
+// const person3 =new Person("sita",28);
+
+
+// console.log(person1 , person2, person3);
+// person1.greet();
+
+// function BankAccount(customerName,balance=0) {
+//    this.customerName = customerName;
+//    this.accountNumber = Date.now();
+//    this.balance = balance;
+
+//    this.deposit = function (amount) {
+//       this.balance += amount;
+//    };
+   
+//    this.withdraw = function (amount) {
+//       this.balance -= amount;
+//    };
+// }
+
+// const ramAccount= new BankAccount("Ram",5000) ;
+// const ShyamAccount= new BankAccount("shyam", 4000);
+// ShyamAccount.deposit(5000);
+// ShyamAccount.withdraw(1000);
+
+// console.log(ramAccount, ShyamAccount);
+
+// const addform = document.querySelector("#addAccount");
+// const customerName = document.querySelector("#customerName");
+// const balance = document.querySelector("#balance");
+
+// const depositForm = document.querySelector("#depositAccount")
+// const accountNumber = document.querySelector("#accountNumber")
+// const amount = document.querySelector("#amount")
+
+
+
+// let accounts = [];
+
+// addform.addEventListener("submit", (e)=>{
+//       e.preventDefault()
+
+//       const newAccount = new BankAccount(customerName.value, +balance.value);
+//       accounts.push(newAccount);
+//       console.log(accounts);
+// });
+
+// depositForm.addEventListener("submit",(e)=>{
+//    e.preventDefault();
+//    const account = accounts.find((value,index) => value.accountNumber === +accountNumber.value);
+
+//    if (!account) return alert("account not found")
+//    account.deposit(+amount.value);
+
+//    console.log(accounts)
+// });
+
+
+class BankAccount{
+   customerName;
+   accountNumber;
+   #balance =0;
+
+   constructor(customerName,balance = 0){
+      this.customerName = customerName;
+      this.accountNumber = Date.now();
+      this.#balance = balance;
+   }
+      deposit(amount){
+         this.#balance += amount;
+      }
+      withdraw(amount) 
+      {
+         this.#balance -= amount;   
+   }
+    setBalance (newBalance){
+      if (isNaN(newBalance)){
+         throw new Error("Number must be valid")
+      }
+      this.#balance= newBalance;
+      
+    }
+    getBalance(){
+      return this.#balance;
+    }
+ 
+   }
+
+   class CurrentAccount extends BankAccount {
+      transactionLimit = 5000;
+      constructor(customerName, balance = 0){
+         super(customerName, balance);
+      }
+         #calculateInterest(amount){
+            console.log(`Calculating amount interest for ${amount}`)
+
+            const interest = amount*0.05;
+            console.log(`calculated interest is : ${interest}`)
+         }
+      takeBussinessLoan(amount){
+         this.#calculateInterest(amount);
+         console.log(`Taking business loan is : ${amount}`)
+      }
+   }
+
+   const ramAccount = new CurrentAccount("ram",500);
+   // ramAccount.setBalance(9000);  
+   // console.log(ramAccount.getBalance());
+   console.log(ramAccount);
+   ramAccount.takeBussinessLoan(100000);
+
